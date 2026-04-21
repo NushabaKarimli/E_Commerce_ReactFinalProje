@@ -1,0 +1,246 @@
+// Rəng dəyişənləri
+$pink-main: #ff4d8d;
+$pink-soft: #ffb3c7;
+$dark-bg: #121212;
+$light-bg: #fdfdfd;
+$dark-text: #f5f5f5;
+$light-text: #222;
+
+.header-container {
+  &.light {
+    background: $light-bg;
+    color: $light-text;
+  }
+
+  &.dark {
+    background: #1a1a2e;
+    color: $dark-text;
+
+    .sectionOne {
+      background: transparent; // Inherit from container
+    }
+
+    p {
+      color: #ddd;
+    }
+
+    .right-box img {
+      box-shadow: 0 20px 40px rgba(255, 77, 141, 0.25);
+    }
+  }
+}
+
+.sectionOne {
+  padding: 4rem 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  .boxes {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .left-box {
+    flex: 1;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: $pink-main;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .btn1 {
+      background: linear-gradient(135deg, $pink-main, $pink-soft);
+      color: white;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 77, 141, 0.4);
+      }
+    }
+  }
+
+  .right-box {
+    flex: 1;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.Oclock-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center;
+}
+
+.product-item-cart {
+  width: 280px;
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.25);
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  h1 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff69b4;
+    }
+  }
+
+  .btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .btn-successc {
+    background: linear-gradient(135deg, #ff69b4, #d63384);
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.15) rotate(90deg);
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+    }
+  }
+
+  .btn-wishlist {
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff69b4;
+
+    &:hover {
+      background: #ff69b4;
+      transform: scale(1.15);
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+    }
+  }
+
+
+  &.light {
+    background: #ffe4f3;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+
+    a img {
+      border: 2px solid #ffc0e3;
+
+      &:hover {
+        border-color: #ff69b4;
+      }
+    }
+
+    h1 {
+      color: #2d2d2d;
+    }
+
+    .btn {
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
+    }
+
+    .btn-wishlist {
+      background: #ffffff;
+    }
+  }
+
+
+  &.dark {
+     background: #1a1a2e;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+
+    a img {
+      border: 2px solid #ff8ac3;
+
+      &:hover {
+        border-color: #ffb6d9;
+      }
+    }
+
+    h1 {
+      color: #f0f0f0;
+    }
+
+    .btn {
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.25);
+    }
+
+    .btn-wishlist {
+      background: #1a1a2e;
+    }
+  }
+}
+.ProList{
+  display: flex;
+  flex-wrap: wrap;
+}

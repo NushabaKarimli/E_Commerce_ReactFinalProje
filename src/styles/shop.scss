@@ -1,0 +1,88 @@
+.shopPage {
+  transition: all 0.3s ease;
+  padding-left: 60px;
+  .searchBox {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 50px;
+    select,
+    input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: 2px solid #ff69b4;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      outline: none;
+
+      &:focus {
+        border-color: #d63384;
+        transform: scale(1.02);
+      }
+    }
+
+    select {
+      cursor: pointer;
+
+      &:hover {
+        border-color: #d63384;
+      }
+    }
+  
+  &.light {
+    background: #ffffff;
+
+    .searchBox {
+      select,
+      input {
+        background: #ffe4f3;
+        color: #2d2d2d;
+
+        &::placeholder {
+          color: #888888;
+        }
+      }
+    }
+  }
+  &.dark {
+    background: #1a1a2e;
+
+    .searchBox {
+      select,
+      input {
+        background: #16213e;
+        color: #f0f0f0;
+        border-color: #ff8ac3;
+
+        &::placeholder {
+          color: #cccccc;
+        }
+
+        &:focus {
+          border-color: #ffb6d9;
+        }
+      }
+
+      select:hover {
+        border-color: #ffb6d9;
+      }
+    }
+  }
+
+  .ProList{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .product-item-cart{
+        width:30%;
+    }
+  }
+  
+}
+
+}

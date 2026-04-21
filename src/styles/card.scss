@@ -1,0 +1,233 @@
+section {
+  min-height: 100vh;
+  padding: 100px 40px 60px;
+  transition: all 0.3s ease;
+  &.light {
+    background: #ffffff;
+
+    .cart-wrapper {
+      h1 {
+        color: #2d2d2d;
+      }
+
+      .cart-table {
+        background: #ffe4f3;
+
+        table {
+          th {
+            background: #ff69b4;
+            color: #ffffff;
+          }
+
+          td {
+            color: #2d2d2d;
+            border-bottom: 1px solid #ffc0e3;
+          }
+
+          img {
+            border: 2px solid #ff69b4;
+          }
+
+          i {
+            color: #d63384;
+
+            &:hover {
+              color: #ff1493;
+            }
+          }
+
+          span {
+            background: #ff69b4;
+            color: #ffffff;
+
+            &:hover {
+              background: #d63384;
+            }
+          }
+        }
+
+        .clear-all-btn {
+          background: #ff69b4;
+          color: #ffffff;
+
+          &:hover {
+            background: #d63384;
+          }
+        }
+      }
+
+      .cart-summary {
+        background: #ffe4f3;
+        color: #2d2d2d;
+
+        h6 {
+          color: #ff69b4;
+        }
+      }
+    }
+  }
+
+  // Dark Mode
+  &.dark {
+    background: #1a1a2e;
+
+    .cart-wrapper {
+      h1 {
+        color: #f0f0f0;
+      }
+
+      .cart-table {
+        background: #16213e;
+
+        table {
+          th {
+            background: #ff69b4;
+            color: #ffffff;
+          }
+
+          td {
+            color: #f0f0f0;
+            border-bottom: 1px solid #2d3a52;
+          }
+
+          img {
+            border: 2px solid #ff8ac3;
+          }
+
+          i {
+            color: #ffb6d9;
+
+            &:hover {
+              color: #ff69b4;
+            }
+          }
+
+          span {
+            background: #ff69b4;
+            color: #ffffff;
+
+            &:hover {
+              background: #ffb6d9;
+            }
+          }
+        }
+
+        .clear-all-btn {
+          background: #ff69b4;
+          color: #ffffff;
+
+          &:hover {
+            background: #ffb6d9;
+          }
+        }
+      }
+
+      .cart-summary {
+        background: #16213e;
+        color: #f0f0f0;
+
+        h6 {
+          color: #ffb6d9;
+        }
+      }
+    }
+  }
+
+  .cart-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+
+    .cart-table {
+      flex: 2;
+      padding: 30px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+
+      h1 {
+        text-align: center;
+        font-size: 28px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+          padding: 15px;
+          text-align: left;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        td {
+          padding: 15px;
+          text-align: left;
+
+          img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+
+          i {
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+
+          span {
+            padding: 8px 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+
+      .clear-all-btn {
+        margin-top: 20px;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .cart-summary {
+      flex: 1;
+      padding: 30px;
+      border-radius: 15px;
+      height: fit-content;
+      text-align: center;
+      transition: all 0.3s ease;
+
+      h6 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      span {
+        font-size: 28px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
