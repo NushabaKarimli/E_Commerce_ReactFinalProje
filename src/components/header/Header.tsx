@@ -133,8 +133,7 @@ const Header: React.FC = () => {
         </div>
       </Drawer>
 
-      {/* Spacer for fixed header */}
-      <div style={{ height: '70px' }}></div>
+      <div className="header-spacer" aria-hidden="true" />
     </>
   );
 };

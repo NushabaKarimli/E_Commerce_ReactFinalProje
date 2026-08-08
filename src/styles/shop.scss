@@ -1,39 +1,9 @@
 .shopPage {
   transition: all 0.3s ease;
-  padding-left: 60px;
-  .searchBox {
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    padding: 50px;
-    select,
-    input {
-      flex: 1;
-      min-width: 200px;
-      padding: 12px 20px;
-      border-radius: 25px;
-      border: 2px solid #ff69b4;
-      font-size: 15px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      outline: none;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-sizing: border-box;
+  width: 100%;
 
-      &:focus {
-        border-color: #d63384;
-        transform: scale(1.02);
-      }
-    }
-
-    select {
-      cursor: pointer;
-
-      &:hover {
-        border-color: #d63384;
-      }
-    }
-  
   &.light {
     background: #ffffff;
 
@@ -49,6 +19,7 @@
       }
     }
   }
+
   &.dark {
     background: #1a1a2e;
 
@@ -74,15 +45,58 @@
     }
   }
 
-  .ProList{
+  .searchBox {
+    max-width: 1200px;
+    margin: 0 auto 40px;
     display: flex;
+    gap: 15px;
     flex-wrap: wrap;
-    align-items: center;
-    .product-item-cart{
-        width:30%;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    box-sizing: border-box;
+
+    select,
+    input {
+      flex: 1 1 200px;
+      min-width: 0;
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: 2px solid #ff69b4;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      outline: none;
+
+      &:focus {
+        border-color: #d63384;
+        transform: scale(1.02);
+      }
+    }
+
+    select {
+      cursor: pointer;
+
+      &:hover {
+        border-color: #d63384;
+      }
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+
+      select,
+      input {
+        flex: 1 1 100%;
+        width: 100%;
+      }
     }
   }
-  
-}
 
+  .list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(0.25rem, 2vw, 1rem);
+    box-sizing: border-box;
+  }
 }

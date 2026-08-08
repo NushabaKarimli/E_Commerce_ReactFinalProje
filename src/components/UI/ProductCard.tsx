@@ -44,23 +44,26 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
 
   return (
     <div className={`product-item-cart ${theme}`}>
-      {/* Şəkil və üzərində açılan düymələr */}
+      {/* Şəkil konteyneri */}
       <div className="img-container">
         <Link to={`/shop/${item.id}`}>
-          <img src={item.imgUrl} alt={item.productName} />
+          <img src={item.imgUrl} alt={item.productName} loading="lazy" />
         </Link>
         <div className="hover-actions">
-          <button onClick={toggleWishlist} className="btn-action">
+          <button onClick={toggleWishlist} className="btn-action" aria-label="Wishlist">
             {isInWishlist ? '❤️' : '🤍'}
           </button>
-          <button onClick={addToCart} className="btn-action">
+          <button onClick={addToCart} className="btn-action" aria-label="Add to cart">
             +
           </button>
         </div>
       </div>
 
-      <h1>{item.productName}</h1>
-      <span className="price">${item.price}</span>
+      {/* Məhsul haqqında məlumat */}
+      <div className="product-info">
+        <h1 title={item.productName}>{item.productName}</h1>
+        <span className="price">${item.price}</span>
+      </div>
     </div>
   );
 };

@@ -36,23 +36,24 @@ const theme = useSelector((state: RootState) => state.theme.mode);
           {cartItems.length === 0 ? (
             <h1>Sebet boşdur</h1>
           ) : (
-            <table className="table bordered">
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Title</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cartItems.map((pro: CartItem) => (
-                  <Tr item={pro} key={pro.id} />
-                ))}
-              </tbody>
-            </table>
-            
+            <div className="table-responsive">
+              <table className="table bordered">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cartItems.map((pro: CartItem) => (
+                    <Tr item={pro} key={pro.id} />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
           <button className="clear-all-btn" onClick={clearAll}>
                 Hamısını Sil

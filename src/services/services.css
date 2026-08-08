@@ -1,39 +1,96 @@
 .servicesSection {
+  width: 100%;
+  padding: clamp(2rem, 4vw, 4rem) 1rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+.servicesSection .servicesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.servicesSection .serviceCard {
+  background: var(--card-bg, #f0f0f0);
+  padding: 1.5rem;
+  border-radius: 16px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: 80px auto;
+  gap: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-.servicesSection .box {
-  width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 15px;
-  border-radius: 10px;
-  transform: scale(1);
-  transition: 0.5s ease-in-out;
+.servicesSection .serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
-.servicesSection .box:hover {
-  transform: scale(1.2);
-}
-.servicesSection .box i {
-  background-color: black;
+.servicesSection .serviceCard .iconBox {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
   border-radius: 50%;
-  color: white;
-  padding: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.servicesSection.dark {
-  background: #1a1a2e;
+.servicesSection .serviceCard .iconBox i {
+  font-size: 1.6rem;
+  color: #222;
 }
-.servicesSection.dark .box h5 {
-  color: darkmagenta;
+.servicesSection .serviceCard .contentBox h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
 }
-.servicesSection.light {
-  background-color: white;
+.servicesSection .serviceCard .contentBox p {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.4;
+  opacity: 0.8;
 }
-.servicesSection.light .box h5 {
-  color: black;
+.servicesSection.dark .serviceCard {
+  background-blend-mode: multiply;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+.servicesSection.dark .serviceCard .iconBox {
+  background: rgba(0, 0, 0, 0.25);
+}
+.servicesSection.dark .serviceCard .iconBox i {
+  color: #fff;
+}
+.servicesSection.dark .serviceCard .contentBox h3 {
+  color: #fff;
+}
+.servicesSection.dark .serviceCard .contentBox p {
+  color: #ddd;
+}
+@media (max-width: 576px) {
+  .servicesSection {
+    padding: 1.5rem 0.75rem;
+  }
+  .servicesSection .servicesContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .servicesSection .serviceCard {
+    padding: 1.2rem;
+  }
+  .servicesSection .serviceCard .iconBox {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+  .servicesSection .serviceCard .iconBox i {
+    font-size: 1.3rem;
+  }
+  .servicesSection .serviceCard .contentBox h3 {
+    font-size: 0.95rem;
+  }
+  .servicesSection .serviceCard .contentBox p {
+    font-size: 0.8rem;
+  }
 }/*# sourceMappingURL=services.css.map */

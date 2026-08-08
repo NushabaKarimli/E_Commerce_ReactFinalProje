@@ -26,10 +26,8 @@ const ProductList: React.FC<ProductListProps> = ({ data, useSwiper }) => {
 
   if (!data || data.length === 0) {
     return (
-      <div className="row">
-        <div className="col-4">
-          <h1>No Products Found</h1>
-        </div>
+      <div className="no-products">
+        <h1>No Products Found</h1>
       </div>
     );
   }
@@ -38,8 +36,14 @@ const ProductList: React.FC<ProductListProps> = ({ data, useSwiper }) => {
       <Swiper
         modules={[Pagination]}
         spaceBetween={20}
-        slidesPerView={4}
+        slidesPerView={1.2}
         pagination={{ clickable: true }}
+        breakpoints={{
+          400: { slidesPerView: 1.5, spaceBetween: 16 },
+          576: { slidesPerView: 2, spaceBetween: 16 },
+          768: { slidesPerView: 3, spaceBetween: 18 },
+          992: { slidesPerView: 4, spaceBetween: 20 },
+        }}
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
