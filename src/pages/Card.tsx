@@ -5,8 +5,7 @@ import { cartActions } from "../redux/slices/cardSlice";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { RootState } from "../app/store";
-import { Product } from "../types/Product";
-/* ===== TYPES ===== */
+
 interface CartItem {
   id: number | string;
   productName: string;
@@ -14,13 +13,8 @@ interface CartItem {
   price: number;
   quantity: number;
 }
-interface ProductCardProps {
-  item: Product;
-}
 
-
-
-const Card: React.FC<ProductCardProps> = ({item}) => {
+const Card: React.FC = () => {
   const dispatch=useDispatch();
 const theme = useSelector((state: RootState) => state.theme.mode);
   const cartItems = useSelector(
@@ -34,19 +28,7 @@ const theme = useSelector((state: RootState) => state.theme.mode);
     dispatch(cartActions.clearCart());
     toast.info("Bütün məhsullar silindi");
   };
-    const addToCart = () => {
-      dispatch(
-        cartActions.addItem({
-          id: item.id,
-          productName: item.productName,
-          price: item.price,
-          imgUrl: item.imgUrl,
-          quantity: 1,
-          totalPrice: item.price
-        })
-      );
-      toast.success(`${item.productName} səbətə əlavə olundu`);
-    };
+  
   return (
     <section className={theme === "dark" ? "dark" : "light"}>
       <div className="cart-wrapper">
@@ -86,7 +68,9 @@ const theme = useSelector((state: RootState) => state.theme.mode);
   );
 };
 
-/* ===== TR COMPONENT ===== */
+
+
+
 interface TrProps {
   item: CartItem;
 }
@@ -98,10 +82,7 @@ const Tr: React.FC<TrProps> = ({ item }) => {
     dispatch(cartActions.deleteItem(item.id));
     toast.error(`${item.productName} Mehsul silindi`);
   };
-  const clearAll = () => {
-    dispatch(cartActions.clearCart());
-    toast.info("Bütün məhsullar silindi");
-  };
+ 
    const addToCart = () => {
       dispatch(
         cartActions.addItem({

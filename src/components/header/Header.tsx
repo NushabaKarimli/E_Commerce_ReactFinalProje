@@ -1,6 +1,5 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -14,11 +13,9 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingBagRoundedIcon from '@mui/icons-material/ShoppingBagRounded';
 import userIcon from "../../assets/images/user-icon.png";
-import bedroom from "../../assets/images/bedroom.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import { toggleTheme } from '../../redux/slices/themeSlice';
-const drawerWidth = 240;
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Shop', path: '/shop' },
@@ -26,7 +23,7 @@ const navItems = [
 ];
 
 const Header: React.FC = () => {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const wishlistCount = useSelector((state: RootState) => state.wishlist.items.length);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -37,7 +34,7 @@ const Header: React.FC = () => {
   const totalQuantity = useSelector(
     (state: RootState) => state.cart.totalQuantity
   );
-  const theme=useSelector((state)=>state.theme.mode);
+  const theme = useSelector((state: RootState) => state.theme.mode);
 
   return (
     <>
@@ -45,10 +42,9 @@ const Header: React.FC = () => {
         component="nav"
         className="header"
       >
-        <div  className={`header-container ${
-    theme === "dark" ? "dark" : "light"
-  }`}>
-          {/* Sol tərəf */}
+        <div className={`header-container ${theme === "dark" ? "dark" : "light"
+          }`}>
+
           <div className="header-left">
             <IconButton
               aria-label="open drawer"
@@ -63,12 +59,11 @@ const Header: React.FC = () => {
 
             <ShoppingBagRoundedIcon className='basket' />
             <Link to={'/'} className='logo-link'>
-              <h1>Silverstore</h1>
+              <h1>Shopping</h1>
             </Link>
-             <button onClick={()=>dispatch(toggleTheme())}>Dark/Light</button>
+            <button onClick={() => dispatch(toggleTheme())}>Dark/Light</button>
           </div>
 
-          {/* Orta hissə - Navigation linkləri (mobilde gizli) */}
           <div className="header-center">
             <nav className="nav-links">
               {navItems.map((item) => (
@@ -83,19 +78,18 @@ const Header: React.FC = () => {
             </nav>
           </div>
 
-          {/* Sağ tərəf (mobilde gizli) */}
           <div className="header-right">
-            
+
             <Link to="/wish">
-            <div className="box">
-              <FavoriteBorderIcon className='parent' />
-              <div className="zero">
-                <span>{wishlistCount}</span>               
+              <div className="box">
+                <FavoriteBorderIcon className='parent' />
+                <div className="zero">
+                  <span>{wishlistCount}</span>
+                </div>
               </div>
-            </div>
             </Link>
             <div className="box">
-              <ShoppingBasketIcon className='parent'/>
+              <ShoppingBasketIcon className='parent' />
               <div className="zero">
                 <span>{totalQuantity}</span>
               </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import "./services.scss";
 import serviceData from '../assets/data/serviceData';
 import 'remixicon/fonts/remixicon.css';

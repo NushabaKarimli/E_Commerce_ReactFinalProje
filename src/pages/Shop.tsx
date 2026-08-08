@@ -3,11 +3,10 @@ import ProductList from "../components/UI/ProductList";
 import { useState } from "react";
 import products from "../assets/data/products";
 import type { Product } from "../types/Product";
-import { useDispatch, useSelector } from "react-redux";
-
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 const Shop = () => {
-  const dispatch=useDispatch();
-   const theme=useSelector((state)=>state.theme.mode);
+  const theme = useSelector((state: RootState) => state.theme.mode);
   const [productsData, setProductsData] = useState<Product[]>(products);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,12 +38,12 @@ const Shop = () => {
 
     switch (sortValue) {
       case "a-z":
-        sortedProducts.sort((a, b) => 
+        sortedProducts.sort((a, b) =>
           a.productName.localeCompare(b.productName)
         );
         break;
       case "z-a":
-        sortedProducts.sort((a, b) => 
+        sortedProducts.sort((a, b) =>
           b.productName.localeCompare(a.productName)
         );
         break;
@@ -77,9 +76,8 @@ const Shop = () => {
   ];
 
   return (
-    <div className={`shopPage ${
-    theme === "dark" ? "dark" : "light"
-  }`}>
+    <div className={`shopPage ${theme === "dark" ? "dark" : "light"
+      }`}>
       <div className="searchBox">
         <select onChange={handleFilter}>
           <option value={""}>Filter By Category</option>
@@ -101,9 +99,9 @@ const Shop = () => {
         <input type="text" onChange={handleSearch} />
       </div>
 
-     <div className="list">
+      <div className="list">
         <ProductList data={productsData} />
-     </div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,39 @@
+.servicesSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 80px auto;
+}
+.servicesSection .box {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+}
+.servicesSection .box:hover {
+  transform: scale(1.2);
+}
+.servicesSection .box i {
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  padding: 15px;
+}
+.servicesSection.dark {
+  background: #1a1a2e;
+}
+.servicesSection.dark .box h5 {
+  color: darkmagenta;
+}
+.servicesSection.light {
+  background-color: white;
+}
+.servicesSection.light .box h5 {
+  color: black;
+}/*# sourceMappingURL=services.css.map */

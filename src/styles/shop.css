@@ -1,0 +1,81 @@
+.shopPage {
+  transition: all 0.3s ease;
+  padding-left: 60px;
+}
+.shopPage .searchBox {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+.shopPage .searchBox select,
+.shopPage .searchBox input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #ff69b4;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.shopPage .searchBox select:focus,
+.shopPage .searchBox input:focus {
+  border-color: #d63384;
+  transform: scale(1.02);
+}
+.shopPage .searchBox select {
+  cursor: pointer;
+}
+.shopPage .searchBox select:hover {
+  border-color: #d63384;
+}
+.shopPage .searchBox.light {
+  background: #ffffff;
+}
+.shopPage .searchBox.light .searchBox select,
+.shopPage .searchBox.light .searchBox input {
+  background: #ffe4f3;
+  color: #2d2d2d;
+}
+.shopPage .searchBox.light .searchBox select::-moz-placeholder, .shopPage .searchBox.light .searchBox input::-moz-placeholder {
+  color: #888888;
+}
+.shopPage .searchBox.light .searchBox select::placeholder,
+.shopPage .searchBox.light .searchBox input::placeholder {
+  color: #888888;
+}
+.shopPage .searchBox.dark {
+  background: #1a1a2e;
+}
+.shopPage .searchBox.dark .searchBox select,
+.shopPage .searchBox.dark .searchBox input {
+  background: #16213e;
+  color: #f0f0f0;
+  border-color: #ff8ac3;
+}
+.shopPage .searchBox.dark .searchBox select::-moz-placeholder, .shopPage .searchBox.dark .searchBox input::-moz-placeholder {
+  color: #cccccc;
+}
+.shopPage .searchBox.dark .searchBox select::placeholder,
+.shopPage .searchBox.dark .searchBox input::placeholder {
+  color: #cccccc;
+}
+.shopPage .searchBox.dark .searchBox select:focus,
+.shopPage .searchBox.dark .searchBox input:focus {
+  border-color: #ffb6d9;
+}
+.shopPage .searchBox.dark .searchBox select:hover {
+  border-color: #ffb6d9;
+}
+.shopPage .searchBox .ProList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.shopPage .searchBox .ProList .product-item-cart {
+  width: 30%;
+}/*# sourceMappingURL=shop.css.map */

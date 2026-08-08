@@ -1,44 +1,11 @@
-// import React from 'react';
-// import ProductCard from './ProductCard';
-// import products from '../../assets/data/products';
-// import { useRef, useState } from 'react';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import { Pagination } from 'swiper/modules';
-// const ProductList = (props) => {
-//   return (
-//     <div className="product-list">
-//       {products
-//         .filter(item => item.category === props.category)
-//         .map(item => (
-//             <ProductCard
-//               key={item.id}  // key əlavə edin
-//               id={item.id}  
-//               productName={item.productName}
-//               imgUrl={item.imgUrl}
-//               category={item.category}
-//               price={item.price}
-//               avgRating={item.avgRating}
-//             />
-//         ))
-//       }
-//     </div>
-//   );
-// };
-
-// export default ProductList;
-
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import ProductCard from "./ProductCard";
+// @ts-ignore
 import "swiper/css";
+// @ts-ignore
 import "swiper/css/pagination";
 
-import ProductCard from "./ProductCard";
-
-/* ===== TYPES ===== */
 interface Product {
   id: string;
   productName: string;
@@ -54,7 +21,8 @@ interface ProductListProps {
 }
 
 
-const ProductList: React.FC<ProductListProps> = ({data, useSwiper}) => {
+
+const ProductList: React.FC<ProductListProps> = ({ data, useSwiper }) => {
 
   if (!data || data.length === 0) {
     return (

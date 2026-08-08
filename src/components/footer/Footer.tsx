@@ -1,15 +1,12 @@
-import React from 'react'
 import "../../styles/footer.scss"
 import "./footer.scss"
-import { useDispatch, useSelector } from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import type { RootState } from "../../app/store";
 const Footer = () => {
-  const dispatch=useDispatch();
-   const theme=useSelector((state)=>state.theme.mode);
+  const theme = useSelector((state: RootState) => state.theme.mode);
   return (
-    <footer className={`footer ${
-    theme === "dark" ? "dark" : "light"
-  }`}>
+    <footer className={`footer ${theme === "dark" ? "dark" : "light"
+      }`}>
       <div className="footer-container">
         <div className="footer-links">
           <span>Home</span>

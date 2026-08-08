@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Clock10, Flame } from "lucide-react";
 import "./oclock.scss"
 type TimeLeft = {
   days: number;
@@ -8,11 +9,11 @@ type TimeLeft = {
 };
 
 const DISCOUNT_END_TIME: number = new Date(
-  "2026-02-31T23:59:59"
-).getTime(); 
+  "2030-02-31T23:59:59"
+).getTime();
 const Oclock = () => {
   const calculateTimeLeft = (): TimeLeft | null => {
-    const now: number = Date.now(); 
+    const now: number = Date.now();
     const difference: number = DISCOUNT_END_TIME - now;
 
     if (difference <= 0) {
@@ -37,7 +38,7 @@ const Oclock = () => {
       setTimeLeft(updatedTime);
 
       if (!updatedTime) {
-        clearInterval(intervalId); 
+        clearInterval(intervalId);
       }
     }, 1000);
 
@@ -45,12 +46,12 @@ const Oclock = () => {
   }, []);
 
   if (!timeLeft) {
-    return <div>⏰ Endirim bitdi</div>;
+    return <div> <Clock10 /> Endirim bitdi</div>;
   }
 
   return (
     <div className="container">
-      🔥 Endirimin bitməsinə:
+      <Flame /> Endirimin bitməsinə:
       <br />
       {timeLeft.days} gün {timeLeft.hours} saat {timeLeft.minutes} dəq{" "}
       {timeLeft.seconds} san

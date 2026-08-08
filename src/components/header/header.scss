@@ -26,12 +26,13 @@ $light-text: #2d2d2d;
     padding: 15px 40px;
     transition: all 0.3s ease;
 
-      
-     &.light {
+
+    &.light {
       background: linear-gradient(135deg, $pink-pale 0%, $white 100%);
       box-shadow: 0 2px 15px rgba(255, 105, 180, 0.1);
 
       .header-left {
+
         .basket,
         button {
           color: $pink-dark;
@@ -89,6 +90,7 @@ $light-text: #2d2d2d;
       box-shadow: 0 2px 20px rgba(255, 105, 180, 0.2);
 
       .header-left {
+
         .basket,
         button {
           color: $pink-light;
@@ -140,144 +142,145 @@ $light-text: #2d2d2d;
         }
       }
     }
+
     .header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
 
-    .basket {
-      font-size: 28px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-
-    .logo-link {
-      text-decoration: none;
-
-      h1 {
-        font-size: 24px;
-        font-weight: 700;
-        margin: 0;
-        letter-spacing: 1px;
+      .basket {
+        font-size: 28px;
         transition: all 0.3s ease;
 
         &:hover {
-          transform: scale(1.05);
+          transform: scale(1.1);
         }
       }
-    }
 
-    button {
-      padding: 8px 20px;
-      border-radius: 25px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-  }
-
-  // Header Center
-  .header-center {
-    .nav-links {
-      display: flex;
-      gap: 30px;
-
-      .nav-link {
+      .logo-link {
         text-decoration: none;
-        font-weight: 500;
-        font-size: 16px;
-        padding: 8px 20px;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-        position: relative;
 
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 0;
-          height: 2px;
-          background: $pink-primary;
-          transition: width 0.3s ease;
+        h1 {
+          font-size: 24px;
+          font-weight: 700;
+          margin: 0;
+          letter-spacing: 1px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
         }
+      }
 
-        &:hover::after {
-          width: 80%;
+      button {
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    // Header Center
+    .header-center {
+      .nav-links {
+        display: flex;
+        gap: 30px;
+
+        .nav-link {
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 16px;
+          padding: 8px 20px;
+          border-radius: 20px;
+          transition: all 0.3s ease;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: $pink-primary;
+            transition: width 0.3s ease;
+          }
+
+          &:hover::after {
+            width: 80%;
+          }
         }
       }
     }
-  }
 
-  // Header Right
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    .box {
-      position: relative;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 50%;
-      transition: all 0.3s ease;
+    // Header Right
+    .header-right {
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 20px;
 
-      .parent {
-        font-size: 26px;
+      .box {
+        position: relative;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
         transition: all 0.3s ease;
-      }
-
-      &:hover {
-        transform: translateY(-3px);
-
-        .parent {
-          transform: scale(1.15);
-        }
-      }
-
-      img {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid $pink-primary;
-      }
-
-      .zero {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 2px 8px rgba(255, 105, 180, 0.4);
 
-        span {
-          color: $white;
-          font-size: 12px;
-          font-weight: 700;
+        .parent {
+          font-size: 26px;
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          transform: translateY(-3px);
+
+          .parent {
+            transform: scale(1.15);
+          }
+        }
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid $pink-primary;
+        }
+
+        .zero {
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 8px rgba(255, 105, 180, 0.4);
+
+          span {
+            color: $white;
+            font-size: 12px;
+            font-weight: 700;
+          }
         }
       }
     }
-  }
 
   }
 
   // Header Left
-  
+
 
   // Mobile Drawer
   .drawer-content {
@@ -292,4 +295,3 @@ $light-text: #2d2d2d;
     }
   }
 }
-

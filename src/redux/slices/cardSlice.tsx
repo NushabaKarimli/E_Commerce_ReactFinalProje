@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-/* ================= TYPES ================= */
+/* ===TYPES === */
 
 export interface CartItem {
   id: string | number;
@@ -17,7 +17,7 @@ export interface CartState {
   totalQuantity: number;
 }
 
-/* ================= INITIAL STATE ================= */
+/* ====INITIAL STATE ===*/
 
 let initialState: CartState = {
   cartItems: [],
@@ -30,7 +30,7 @@ if (cartString !== null) {
   initialState = JSON.parse(cartString) as CartState;
 }
 
-/* ================= SLICE ================= */
+/* ===SLICE ===*/
 
 const cardSlice = createSlice({
   name: "cart",
@@ -92,7 +92,7 @@ const cardSlice = createSlice({
   },
 });
 
-/* ================= EXPORTS ================= */
+/* ===EXPORTS ===*/
 
 export const cartActions = cardSlice.actions;
 export default cardSlice.reducer;
